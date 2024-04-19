@@ -9,7 +9,7 @@
 <body>
     <div id="login-form">
         <h1>Login</h1>
-        <form id="form">
+        <form id="form" onsubmit="login()">
             <div class="input" style="display: grid;">
             <label>Username</label>
             <input placeholder="Enter Username" id="username" oninput="validateUsername()"></input>
@@ -19,13 +19,9 @@
             <input placeholder="Enter Password" type="password" id="password" oninput="validatePassword()"></input>
             <div id="password-error">Invalid password format</div>
             </div>
-
-            <div id="checkbox">
-            <input type="checkbox" class="login_checkbox" id="remember-me">  Remember me</input>
-            </div>
-            <button type="submit" onclick="login()" id="loginButton" disabled>Login</button>
+            <button type="submit" id="loginButton" disabled>Login</button>
         </form>
     </div>
-    <script src="../basic-login-form/javascript/RefactorMain.js"></script>
+    <script src="../login-form/javascript/login.js"></script>
 </body>
 </html>

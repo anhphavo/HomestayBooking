@@ -1,6 +1,5 @@
 "use strict";
 
-// Định nghĩa các điều kiện
 const usernameMinLength = 6;
 const usernameMaxLength = 20;
 const passwordMinLength = 10;
@@ -28,10 +27,7 @@ function initForm() {
       value: "",
       valid: false,
       errorMessage: "",
-    },
-    rememberMe: {
-      checked: false,
-    },
+    }
   };
 }
 
@@ -50,18 +46,13 @@ function setUsernameValid() {
 
 function validateUsername() {
   var username = document.getElementById("username").value;
-  // Kiểm tra required
   if (username.trim() === "") {
     setUsernameInvalid("Username is required");
     validateForm();
     return;
   }
 
-  // Kiểm tra độ dài của username
-  if (
-    username.length < usernameMinLength ||
-    username.length > usernameMaxLength
-  ) {
+  if (username.length < usernameMinLength ||  username.length > usernameMaxLength ) {
     setUsernameInvalid(
       `Username must be between ${usernameMinLength} and ${usernameMaxLength} characters`
     );
@@ -69,8 +60,7 @@ function validateUsername() {
     return;
   }
 
-  // Kiểm tra định dạng cho username
-  // Hiển thị thông báo lỗi nếu username không đúng định dạng
+
   if (!usernameRegex.test(username)) {
     setUsernameInvalid("Username must contain numbers and alphabet characters");
     validateForm();
@@ -104,16 +94,12 @@ function validatePassword() {
 
   if (    password.length < passwordMinLength ||    password.length > passwordMaxLength  ) 
   {
-    setPasswordInvalid(
-      `Password must be between ${passwordMinLength} and ${passwordMaxLength} characters`
-    );
+    setPasswordInvalid(`Password must be between ${passwordMinLength} and ${passwordMaxLength} characters`);
     validateForm();
     return;
   }
-  // Hiển thị thông báo lỗi nếu password không đúng định dạng
   if (!passwordRegex.test(password)) {
-    setPasswordInvalid(
-      "Password must be a combination of uppercase letters, lowercase letters, numbers, and symbols");
+    setPasswordInvalid("Password must be a combination of uppercase letters, lowercase letters, numbers, and symbols");
     validateForm();
     return;
   }
@@ -132,13 +118,9 @@ function validateForm() {
 }
 
 function login() {
-  var usernameValue = usernameElemnent.value;
-  var passwordValue = passwordElemnent.value;
-  if ((usernameValue === "admin123") && (passwordValue === "Admin@1234")) {
-    if (!loginForm.rememberMe.checked) {
-      alert("Successfully! Your account will be saved in 30 days.");
-      return;
-    }
+  var username = usernameElemnent.value;
+  var password = passwordElemnent.value;
+  if ((username === "admin123") && (password === "Admin@1234")) {
     alert("Successfully!");
     return;
   }
