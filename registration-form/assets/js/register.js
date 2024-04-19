@@ -1,6 +1,5 @@
 "use strict";
 
-// Định nghĩa các điều kiện
 const firstNameMinLength = 6;
 const lastNameMinLength = 6;
 const firstNameMaxLength = 50;
@@ -16,8 +15,7 @@ const form = document.getElementById('frm-register');
 let firstNameRegex = /^[a-zA-Z]+$/;
 let lastNameRegex = /^[a-zA-Z]+$/;
 let accountNameRegex = /^[a-zA-Z0-9]+$/;
-let passwordRegex =
-  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/;
+let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/;
 let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 let signUpForm = undefined;
 let firstNameElement = undefined;
@@ -353,7 +351,7 @@ function setEmailValid() {
 function validateEmail() {
   var email = document.getElementById("email").value;
 
-  if (!emailRegex.test(email)) { // Thay vì !isValidEmail(email)
+  if (!emailRegex.test(email)) { 
     setEmailInvalid(`Invalid email format`);
     return;
   }
