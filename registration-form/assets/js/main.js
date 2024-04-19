@@ -353,7 +353,7 @@ function setEmailValid() {
 function validateEmail() {
   var email = document.getElementById("email").value;
 
-  if (!emailRegex.test(email)) { // Thay vì !isValidEmail(email)
+  if (!emailRegex.test(email)) { 
     setEmailInvalid(`Invalid email format`);
     return;
   }
