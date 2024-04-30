@@ -1,100 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Contact Page</title>
-   <style>
-    * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            font-size: 62.5%;
-        }
-
-        body {
-            font-family: "Arial", sans-serif;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        main {
-            width: 40rem;
-            box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
-            margin: 0 auto;
-            height: auto; 
-            border-radius: 2rem;
-            padding: 2rem;
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            flex-direction: column; 
-        }
-
-        h1 {
-            text-align: center;
-            font-size: 3rem;
-            padding: 1rem 2rem;
-        }
-
-        form {
-            margin: 3rem 0;
-            display: flex;
-            flex-direction: column;
-            row-gap: 2rem;
-            width: 100%; 
-            max-width: 30rem; 
-        }
-
-        .input__container {
-            display: flex;
-            flex-direction: column;
-            row-gap: 0.5rem;
-        }
-
-        .input__container label { font-size: 1.6rem; }
-
-        .input__container input,
-        textarea {
-            padding: 1rem 2rem;
-            border-radius: 5px;
-            border: 1px solid #555;
-            resize: none;
-        }
-
-        button {
-            align-self: flex-start;
-            padding: 1rem 2rem;
-            border-radius: 5px;
-            border: none;
-            background: #333;
-            color: #fff;
-            cursor: pointer;
-        }
-   </style>
+<title>HomestayBooking</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
 </head>
 <body>
-    <main>
-        <h1>Welcome to my Form</h1>
-        <form id="form">
-            <div class="input__container">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required />
+
+  <!-- The Contact Section -->
+  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+    <h2 class="w3-wide w3-center">Feedback Customer</h2>
+    <p class="w3-opacity w3-center"><i>Drop a note!</i></p>
+    <div class="w3-row w3-padding-32">
+      <div class="w3-col m6 w3-large w3-margin-bottom">
+        <i class="fa fa-map-marker" style="width:30px"></i> Chicago, US<br>
+        <i class="fa fa-phone" style="width:30px"></i> Phone: +00 151515<br>
+        <i class="fa fa-envelope" style="width:30px"> </i> Email: mail@mail.com<br>
+      </div>
+      <div class="w3-col m6">
+        <form action="" target="_blank">
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
             </div>
-            <div class="input__container">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required />
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
             </div>
-            <div class="input__container">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-            </div>
-            <button>Submit</button>
+          </div>
+          <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+          <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
         </form>
-    </main>
+      </div>
+    </div>
+  </div>
+  
+
+</div>
+
+<!-- Image of location/map -->
+<img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%">
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+  <i class="fa fa-facebook-official w3-hover-opacity"></i>
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+  <p class="w3-medium"></p>
+</footer>
 </body>
 </html>
-
