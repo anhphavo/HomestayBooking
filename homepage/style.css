@@ -234,11 +234,47 @@ h1{
     align-items: center;
     flex-wrap: wrap;
 }
+#list-products .item {
+    width: 290px;
+    height: 374px;
+    background: #362f2f;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-right: 20px;
+}
+#list-products .item img {
+    display: block;
+    margin: 0px auto;
+    margin-top: 17px;
+}
+#list-products .item .stars {
+    display: flex;
+    margin: 0px auto;
+    margin-left: 40px;
+    width: 50%;
+}
+#list-products .item .name {
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 21px;
+}
+#list-products .item .desc {
+    text-align: center;
+    color: #626a67;
+}
+#list-products .item .price {
+    text-align: center;
+    color: #FD4B59;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
 #footer {
     width: 100%;
     background: rgb(0,0,0,0.79);
     height: 322px;
-    margin-top: 338px;
+    margin-top: 2000px;  
     padding: 0px 63px;
     padding-top: 57px;
     display: flex;
