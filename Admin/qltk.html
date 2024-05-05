@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quản lý Phòng HomeStay</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="qltk.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css" integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.bundle.min.js" integrity="sha512-sH8JPhKJUeA9PWk3eOcOl8U+lfZTgtBXD41q6cO/slwxGHCxKcW45K4oPCUhHG7NMB4mbKEddVmPuTXtpbCbFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -51,17 +51,17 @@
                 </div>
                       <ul>
                           
-                        <li>
-                            <a class="item" href="qltk.html">
-                                <div class="icon">
-                                    <i class="fas fa-edit"></i>
-                                </div>
-                                <div class="text">
-                                    Chỉnh sửa thông tin
-                                </div>
-                            </a>
-                            
+                          <li>
+                              <a class="item" >
+                                  <div class="icon">
+                                      <i class="fas fa-edit"></i>
+                                  </div>
+                                  <div class="text">
+                                      Chỉnh sửa thông tin
+                                  </div>
+                              </a>
                           </li>
+                          
                           
                   </div>
                   <div class="list_menu" style="margin-top: 20px;">
@@ -109,16 +109,16 @@
                           
                          
                           <li>
-                              <a class="item" >
-                                  <div class="icon">
+                            <a class="item" href="index.html">
+                                <div class="icon">
                                     <i class="fas fa-edit"></i>
-                                  </div>
-                                  <div class="text">
-                                      Chỉnh sửa thông tin
-                                  </div>
-                              </a>
+                                </div>
+                                <div class="text">
+                                    Chỉnh sửa thông tin
+                                </div>
+                            </a>
+                            
                           </li>
-                          
                       </ul>
                       
                   </div>
@@ -151,59 +151,51 @@
 
     </style>
 
+<div id="rightPanel">
     <div class="container-fluid">
-        <!-- Các phần còn lại của trang ở đây -->
+      <div class="row">
+        <div class="col">
+          <h2 style="font-family: 'Arial', sans-serif;">Quản lý tài khoản</h2>
+          <div id="accountFormContainer">
+            <form id="accountForm">
+              <label for="username">Tên tài khoản:</label>
+              <input type="text" id="username" name="username" required>
+              <label for="password">Mật khẩu:</label>
+              <input type="text" id="password" name="password" required>
+              <label for="confirm-password">Nhập lại mật khẩu:</label>
+              <input type="text" id="confirm-password" name="confirm-password" required>
+              <button class="btn-submit" type="submit">Thêm</button>
+            </form>
+          </div>
+         
+          <table id="roomTable">
+            
+          <div id="accountData">
+            <!-- Danh sách tài khoản sẽ được hiển thị ở đây -->
+          </div>
+        </div>
+      </div>
     </div>
-
-    <!-- Khung bên phải -->
-    <div id="rightPanel">
-      <h2 style="font-family: 'Arial', sans-serif;">Quản lý HomeStay</h2>
+  </div>
   
-       <!-- Form để nhập dữ liệu -->
-  <form id="roomForm">
-    <label for="type">Loại phòng:</label>
-    <input type="text" id="type" name="type" required>
-    <label for="roomCode">Mã phòng:</label>
-    <input type="text" id="roomCode" name="roomCode" required>
-    <label for="name">Tên phòng:</label>
-    <input type="text" id="name" name="name" required>
-    <label for="image">Hình ảnh (URL):</label>
-    <input type="text" id="image" name="image">
-    <label for="price">Mức giá:</label>
-    <input type="number" id="price" name="price" min="0" required>
-    <button class="btn-submit" type="submit">Thêm Phòng</button>
-  </form>
-  <script src="java.js"></script>
-  <!-- Bảng hiển thị dữ liệu -->
-  <table id="roomTable">
-    <thead>
-      <tr>
-        <th>Loại phòng</th>
-        <th>Mã phòng</th>
-        <th>Tên Phòng</th>
-        <th>Hình ảnh</th>
-        <th>Mức giá</th>
-        <th>Hành động</th>
-      </tr>
-    </thead>
-    <tbody id="roomData">
-    </tbody>
-  </table> <!-- Nội dung của khung bên phải -->
-    </div>
-
-    <!-- Khung bên trái -->
-    <div id="leftPanel">
-        <!-- Nội dung của khung bên trái -->
-    </div>
-    <script>
-      function toggleRoomForm() {
-          var roomFormContainer = document.getElementById('roomFormContainer');
-          if (roomFormContainer.style.display === 'none') {
-              roomFormContainer.style.display = 'block';
-          } else {
-              roomFormContainer.style.display = 'none';
-          }
+  <!-- Khung bên trái -->
+  <div id="leftPanel">
+    
+    <!-- Nội dung của khung bên trái -->
+  </div>
+  
+  <script src="qltk.js"></script>
+  
+  <script>
+    function toggleRoomForm() {
+      var roomFormContainer = document.getElementById('roomFormContainer');
+      if (roomFormContainer.style.display === 'none') {
+        roomFormContainer.style.display = 'block';
+      } else {
+        roomFormContainer.style.display = 'none';
       }
-    </script>
-</body>
-</html>
+    }
+  </script>
+  
+  </body>
+  </html>

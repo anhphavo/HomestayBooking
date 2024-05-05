@@ -12,7 +12,7 @@ let rooms = [
               <td>${room.name}</td>
               <td><img src="${room.image}" alt="${room.type}" style="width: 100px; height: 100px;"></td>
               <td>${room.price.toLocaleString('vi-VN')} VND</td>
-              <td>
+              <td >
                   <button class="btn-edit" onclick="editRoom(${index})">Sửa</button>
                   <button class="btn-delete"onclick="deleteRoom(${index})">Xóa</button></td>
             </tr>`;

@@ -63,6 +63,7 @@
                             
                           </li>
                           
+                          
                   </div>
                   <div class="list_menu" style="margin-top: 20px;">
                           <div class="line_menu">
@@ -109,14 +110,15 @@
                           
                          
                           <li>
-                              <a class="item" >
-                                  <div class="icon">
+                            <a class="item" href="index.html">
+                                <div class="icon">
                                     <i class="fas fa-edit"></i>
-                                  </div>
-                                  <div class="text">
-                                      Chỉnh sửa thông tin
-                                  </div>
-                              </a>
+                                </div>
+                                <div class="text">
+                                    Chỉnh sửa thông tin
+                                </div>
+                            </a>
+                            
                           </li>
                           
                       </ul>
@@ -135,7 +137,7 @@
        /* CSS cho khung bên phải */
        #rightPanel {
     width: 850px; /* Độ rộng */
-    max-height: 90%; /* Chiều cao tối đa */
+    max-height: 90vh; /* Chiều cao tối đa: 90% chiều cao của viewport */
     overflow-y: auto; /* Cho phép cuộn khi nội dung vượt quá kích thước */
     background-color: #ffffff; /* Màu nền trắng */
     border: 2px solid #4caf50; /* Viền màu xanh lá */
@@ -149,61 +151,15 @@
 }
 
 
+
+
     </style>
 
-    <div class="container-fluid">
-        <!-- Các phần còn lại của trang ở đây -->
-    </div>
+<div class="container-fluid">
+    <!-- Các phần còn lại của trang ở đây -->
+</div>
 
-    <!-- Khung bên phải -->
-    <div id="rightPanel">
-      <h2 style="font-family: 'Arial', sans-serif;">Quản lý HomeStay</h2>
-  
-       <!-- Form để nhập dữ liệu -->
-  <form id="roomForm">
-    <label for="type">Loại phòng:</label>
-    <input type="text" id="type" name="type" required>
-    <label for="roomCode">Mã phòng:</label>
-    <input type="text" id="roomCode" name="roomCode" required>
-    <label for="name">Tên phòng:</label>
-    <input type="text" id="name" name="name" required>
-    <label for="image">Hình ảnh (URL):</label>
-    <input type="text" id="image" name="image">
-    <label for="price">Mức giá:</label>
-    <input type="number" id="price" name="price" min="0" required>
-    <button class="btn-submit" type="submit">Thêm Phòng</button>
-  </form>
-  <script src="java.js"></script>
-  <!-- Bảng hiển thị dữ liệu -->
-  <table id="roomTable">
-    <thead>
-      <tr>
-        <th>Loại phòng</th>
-        <th>Mã phòng</th>
-        <th>Tên Phòng</th>
-        <th>Hình ảnh</th>
-        <th>Mức giá</th>
-        <th>Hành động</th>
-      </tr>
-    </thead>
-    <tbody id="roomData">
-    </tbody>
-  </table> <!-- Nội dung của khung bên phải -->
-    </div>
-
-    <!-- Khung bên trái -->
-    <div id="leftPanel">
-        <!-- Nội dung của khung bên trái -->
-    </div>
-    <script>
-      function toggleRoomForm() {
-          var roomFormContainer = document.getElementById('roomFormContainer');
-          if (roomFormContainer.style.display === 'none') {
-              roomFormContainer.style.display = 'block';
-          } else {
-              roomFormContainer.style.display = 'none';
-          }
-      }
-    </script>
+<!-- Khung bên phải -->
+<div id="rightPanel">
 </body>
 </html>
