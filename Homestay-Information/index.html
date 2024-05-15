@@ -4,40 +4,98 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Homestay Booking</title>
-  <!-- Link tới Bootstrap CSS -->
+
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <h1 class="mt-5 mb-4">Homestay Booking</h1>
+  <div class="container-fluid">
+    <div class="row">
+ 
+      <div class="col-md-3">
+        <div class="sticky-top pt-4"> <!-- Sticky-top để giữ sidebar ở vị trí cố định khi cuộn -->
 
-    <!-- Form tìm kiếm -->
-    <form id="searchForm" class="mb-4">
-      <div class="form-group">
-        <label for="searchTerm">Search by Name:</label>
-        <input type="text" id="searchTerm" name="searchTerm" class="form-control" required>
+          <div class="card mb-4">
+            <h5 class="card-header">Chọn lọc theo</h5>
+            <div class="card-body">
+   
+              <div class="form-group">
+                <label for="filterLocation">Địa Điểm:</label>
+                <select class="form-control" id="filterLocation">
+                  <option value="Đà Nẵng">Đà Nẵng</option>
+                  <option value="Huế">Huế</option>
+                  <option value="Thành phố Hồ Chí Minh">Thành phố Hồ Chí Minh</option>
+                  <option value="Hà Nội">Hà Nội</option>
+                  <option value="Nha trang ">Nha trang</option>
+        
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="filterRating">Đánh giá:</label>
+                <select class="form-control" id="filterRating">
+                  <option value="">All</option>
+                  <option value="5">5 stars</option>
+                  <option value="4">4 stars</option>
+                  <option value="3">3 stars</option>
+    
+                </select>
+              </div>
+   
+              <div class="form-group">
+                <label for="filterAmenities">Tiện ích:</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="amenityPool">
+                  <label class="form-check-label" for="amenityPool">Hồ bơi</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="amenityWifi">
+                  <label class="form-check-label" for="amenityWifi">Wi-Fi</label>
+                </div>
+
+              </div>
+
+              <button type="button" class="btn btn-primary">Tìm kiếm chọn lọc</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <button type="submit" class="btn btn-primary">Search</button>
-    </form>
+      
 
-    <!-- Danh sách điểm du lịch -->
-    <div id="destinationsContainer" class="row"></div>
+
+      <div class="col-md-9">
+        <div class="container">
+          <h1 class="mt-5 mb-4">Homestay Booking</h1>
+
+
+          <form id="searchForm" class="mb-4">
+            <div class="form-group">
+              <label for="searchTerm">Search by Name:</label>
+              <input type="text" id="searchTerm" name="searchTerm" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Tìm Kiếm</button>
+          </form>
+
+
+          <div id="destinationsContainer" class="row"></div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- Link tới Bootstrap JS và jQuery -->
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
 
-  <!-- Script để hiển thị danh sách điểm du lịch và xử lý tìm kiếm -->
   <script src="data.js"></script>
   <script>
     const destinationsContainer = document.getElementById('destinationsContainer');
     const searchForm = document.getElementById('searchForm');
 
-    // Hiển thị danh sách các điểm du lịch dưới dạng card
+
     function displayDestinations(dests) {
-      destinationsContainer.innerHTML = ''; // Xóa nội dung cũ
+      destinationsContainer.innerHTML = ''; 
       dests.forEach(destination => {
         const card = document.createElement('div');
         card.classList.add('col-md-4', 'mb-3');
@@ -46,7 +104,7 @@
             <img src="${destination.image}" class="card-img-top" alt="${destination.name}">
             <div class="card-body">
               <h5 class="card-title">${destination.name}</h5>
-              <p class="card-text">${destination.description}</p>
+              <p class="card-text">${destination.description.substring(0, 100)}...</p>
               <a href="detail.html?id=${destination.id}" class="btn btn-primary">View Details</a>
             </div>
           </div>
@@ -55,7 +113,7 @@
       });
     }
 
-    // Xử lý sự kiện submit của form tìm kiếm
+  
     searchForm.addEventListener('submit', function(event) {
       event.preventDefault();
       const searchTerm = document.getElementById('searchTerm').value.trim().toLowerCase();
@@ -64,7 +122,7 @@
       displayDestinations(searchResults);
     });
 
-    // Hiển thị tất cả điểm du lịch khi trang được tải
+   
     displayDestinations(destinations);
   </script>
 </body>
