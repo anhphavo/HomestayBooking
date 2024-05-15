@@ -56,59 +56,27 @@ const destinations = [
     },
     {
       id: 6,
-      name: "La Passion - Tay Ho Hanoi One Bedroom Apartment",
-      address:"52/28 Đường Tô Ngọc Vân Phòng 201 nhà số 7, Quận Tây Hồ, Hà Nội",
-      description: "La Passion - Tay Ho Hanoi One Bedroom Apartment! nhìn ra hồ, có Wi-Fi miễn phí và chỗ đậu xe riêng miễn phí, nằm ở Hà Nội, cách Hồ Tây 3.4 km. Chỗ nghỉ có điều hòa, bếp đầy đủ tiện nghi, TV màn hình phẳng, cũng như phòng tắm riêng với vòi sen, đồ vệ sinh cá nhân miễn phí và máy sấy tóc. Tủ lạnh và lò vi sóng, cũng như ấm đun nước đều được cung cấp. Khách có thể sử dụng sân hiên tại căn hộ. La Passion - Tay Ho Hanoi One Bedroom Apartment! cách Đền Quán Thánh 4.6 km và Ô Quan Chưởng 5.1 km. Sân bay gần nhất là Sân bay Quốc tế Nội Bài, cách chỗ nghỉ 18 km, đồng thời chỗ nghỉ này cũng cung cấp dịch vụ đưa đón sân bay mất phí.",
-      image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/521467963.jpg?k=5085b3086c866495b68fa649cc932d5d5ee3af037ce8f9e2f5727b7cef4f81b1&o=&hp=1",
+      name: "Le House Boutique Hotel",
+      address:"85 - 87 Ha Bong, Đà Nẵng",
+      description: "Nằm trên khu vực Bãi biển Mỹ Khê ở thành phố Đà Nẵng, trong bán kính 2 km từ Cầu Sông Hàn, Le House Boutique Hotel cung cấp các phòng gắn máy điều hòa với Wi-Fi miễn phí toàn khuôn viên. Khách sạn theo phong cách Pháp này có quán bar và bãi đỗ xe riêng miễn phí. Mỗi phòng tại đây đều được trang bị truyền hình cáp. Một số phòng có khu vực ghế ngồi để khách thư giãn, trong khi một số phòng cho khách tầm nhìn ra quang cảnh biển hoặc thành phố. Các phòng còn đi kèm phòng tắm riêng với bồn tắm/vòi sen, dép và đồ vệ sinh cá nhân miễn phí. Khách sạn có lễ tân 24 giờ. Le House Boutique Hotel cách Bảo tàng Chăm 2,4 km và Bãi biển Mỹ An 3 km. Sân bay gần nhất là sân bay quốc tế Đà Nẵng, cách đó 5 km. Các cặp đôi đặc biệt thích địa điểm này — họ cho điểm 9,2 cho kỳ nghỉ dành cho 2 người.",
+      image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/111556617.jpg?k=bfaa41e41235d81be15e353b69bf62f423b154f68cfe0f13e6cb4b75b6a16ba1&o=&hp=1",
       rating: 9.2,
-      cost: "300.000 VND",
+      cost: "450.000 VND",
       reviews: "Đánh giá khách hàng về khách sạn 1.",
-      amenities: ["Wifi", "Chỗ đậu xe riêng miễn phí"]
+      amenities: ["Wifi", "Spa", "Gym"]
     },
     {
       id: 7,
-      name: "La Passion - Tay Ho Hanoi One Bedroom Apartment",
-      address:"52/28 Đường Tô Ngọc Vân Phòng 201 nhà số 7, Quận Tây Hồ, Hà Nội",
-      description: "La Passion - Tay Ho Hanoi One Bedroom Apartment! nhìn ra hồ, có Wi-Fi miễn phí và chỗ đậu xe riêng miễn phí, nằm ở Hà Nội, cách Hồ Tây 3.4 km. Chỗ nghỉ có điều hòa, bếp đầy đủ tiện nghi, TV màn hình phẳng, cũng như phòng tắm riêng với vòi sen, đồ vệ sinh cá nhân miễn phí và máy sấy tóc. Tủ lạnh và lò vi sóng, cũng như ấm đun nước đều được cung cấp. Khách có thể sử dụng sân hiên tại căn hộ. La Passion - Tay Ho Hanoi One Bedroom Apartment! cách Đền Quán Thánh 4.6 km và Ô Quan Chưởng 5.1 km. Sân bay gần nhất là Sân bay Quốc tế Nội Bài, cách chỗ nghỉ 18 km, đồng thời chỗ nghỉ này cũng cung cấp dịch vụ đưa đón sân bay mất phí.",
-      image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/521467963.jpg?k=5085b3086c866495b68fa649cc932d5d5ee3af037ce8f9e2f5727b7cef4f81b1&o=&hp=1",
+      name: "San Palace Hotel & Spa",
+      address:"187 Hang Bong, Hoan Kiem, Quận Hoàn Kiếm, Hà Nội",
+      description: "San Palace Hotel & Spa có hồ bơi ngoài trời, sân hiên, nhà hàng và quầy bar ở Hà Nội. Khách sạn 3 sao này có máy ATM và dịch vụ tiền sảnh. Chỗ nghỉ cung cấp lễ tân 24/24, dịch vụ đưa đón sân bay, dịch vụ phòng và Wi-Fi miễn phí ở toàn bộ chỗ nghỉ. Chỗ nghỉ có phục vụ bữa sáng thực đơn buffet, kiểu lục địa hoặc món chay hằng ngày. Các điểm tham quan nổi tiếng gần khách sạn bao gồm Ga Hà Nội, Nhà thờ Thánh Joseph và Nhà hát múa rối Thăng Long. Sân bay gần nhất là Sân bay Quốc tế Nội Bài, cách San Palace Hotel & Spa 24 km. Các cặp đôi đặc biệt thích địa điểm này — họ cho điểm 9,7 cho kỳ nghỉ dành cho 2 người.",
+      image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/415412571.jpg?k=16ac4a29f562e18f4b9556eec75c5e560f52b210ff66a7c165128ff4e813e3c4&o=&hp=1",
       rating: 9.2,
-      cost: "300.000 VND",
+      cost: "650.000 VND",
       reviews: "Đánh giá khách hàng về khách sạn 1.",
-      amenities: ["Wifi", "Chỗ đậu xe riêng miễn phí"]
+      amenities: ["Wifi", "Bar", "Spa"]
     },
-    {
-      id: 8,
-      name: "La Passion - Tay Ho Hanoi One Bedroom Apartment",
-      address:"52/28 Đường Tô Ngọc Vân Phòng 201 nhà số 7, Quận Tây Hồ, Hà Nội",
-      description: "La Passion - Tay Ho Hanoi One Bedroom Apartment! nhìn ra hồ, có Wi-Fi miễn phí và chỗ đậu xe riêng miễn phí, nằm ở Hà Nội, cách Hồ Tây 3.4 km. Chỗ nghỉ có điều hòa, bếp đầy đủ tiện nghi, TV màn hình phẳng, cũng như phòng tắm riêng với vòi sen, đồ vệ sinh cá nhân miễn phí và máy sấy tóc. Tủ lạnh và lò vi sóng, cũng như ấm đun nước đều được cung cấp. Khách có thể sử dụng sân hiên tại căn hộ. La Passion - Tay Ho Hanoi One Bedroom Apartment! cách Đền Quán Thánh 4.6 km và Ô Quan Chưởng 5.1 km. Sân bay gần nhất là Sân bay Quốc tế Nội Bài, cách chỗ nghỉ 18 km, đồng thời chỗ nghỉ này cũng cung cấp dịch vụ đưa đón sân bay mất phí.",
-      image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/521467963.jpg?k=5085b3086c866495b68fa649cc932d5d5ee3af037ce8f9e2f5727b7cef4f81b1&o=&hp=1",
-      rating: 9.2,
-      cost: "300.000 VND",
-      reviews: "Đánh giá khách hàng về khách sạn 1.",
-      amenities: ["Wifi", "Chỗ đậu xe riêng miễn phí"]
-    },
-    {
-      id: 9,
-      name: "La Passion - Tay Ho Hanoi One Bedroom Apartment",
-      address:"52/28 Đường Tô Ngọc Vân Phòng 201 nhà số 7, Quận Tây Hồ, Hà Nội",
-      description: "La Passion - Tay Ho Hanoi One Bedroom Apartment! nhìn ra hồ, có Wi-Fi miễn phí và chỗ đậu xe riêng miễn phí, nằm ở Hà Nội, cách Hồ Tây 3.4 km. Chỗ nghỉ có điều hòa, bếp đầy đủ tiện nghi, TV màn hình phẳng, cũng như phòng tắm riêng với vòi sen, đồ vệ sinh cá nhân miễn phí và máy sấy tóc. Tủ lạnh và lò vi sóng, cũng như ấm đun nước đều được cung cấp. Khách có thể sử dụng sân hiên tại căn hộ. La Passion - Tay Ho Hanoi One Bedroom Apartment! cách Đền Quán Thánh 4.6 km và Ô Quan Chưởng 5.1 km. Sân bay gần nhất là Sân bay Quốc tế Nội Bài, cách chỗ nghỉ 18 km, đồng thời chỗ nghỉ này cũng cung cấp dịch vụ đưa đón sân bay mất phí.",
-      image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/521467963.jpg?k=5085b3086c866495b68fa649cc932d5d5ee3af037ce8f9e2f5727b7cef4f81b1&o=&hp=1",
-      rating: 9.2,
-      cost: "300.000 VND",
-      reviews: "Đánh giá khách hàng về khách sạn 1.",
-      amenities: ["Wifi", "Chỗ đậu xe riêng miễn phí"]
-    },
-    {
-      id: 10,
-      name: "La Passion - Tay Ho Hanoi One Bedroom Apartment",
-      address:"52/28 Đường Tô Ngọc Vân Phòng 201 nhà số 7, Quận Tây Hồ, Hà Nội",
-      description: "La Passion - Tay Ho Hanoi One Bedroom Apartment! nhìn ra hồ, có Wi-Fi miễn phí và chỗ đậu xe riêng miễn phí, nằm ở Hà Nội, cách Hồ Tây 3.4 km. Chỗ nghỉ có điều hòa, bếp đầy đủ tiện nghi, TV màn hình phẳng, cũng như phòng tắm riêng với vòi sen, đồ vệ sinh cá nhân miễn phí và máy sấy tóc. Tủ lạnh và lò vi sóng, cũng như ấm đun nước đều được cung cấp. Khách có thể sử dụng sân hiên tại căn hộ. La Passion - Tay Ho Hanoi One Bedroom Apartment! cách Đền Quán Thánh 4.6 km và Ô Quan Chưởng 5.1 km. Sân bay gần nhất là Sân bay Quốc tế Nội Bài, cách chỗ nghỉ 18 km, đồng thời chỗ nghỉ này cũng cung cấp dịch vụ đưa đón sân bay mất phí.",
-      image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/521467963.jpg?k=5085b3086c866495b68fa649cc932d5d5ee3af037ce8f9e2f5727b7cef4f81b1&o=&hp=1",
-      rating: 9.2,
-      cost: "300.000 VND",
-      reviews: "Đánh giá khách hàng về khách sạn 1.",
-      amenities: ["Wifi", "Chỗ đậu xe riêng miễn phí"]
-    },
+
   ];
 
   module.exports = destinations;
