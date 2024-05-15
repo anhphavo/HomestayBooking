@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Web Đăng Nhập</title>
+</head>
+<body>
+    <button id="logoutBtn">Đăng xuất</button>
+
+    <script>
+        function logout() {
+            fetch('/logout', {
+                method: 'POST',
+                credentials: 'same-origin' 
+            })
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = '/login';
+                } else {
+                    console.error('Đăng xuất không thành công');
+                }
+            })
+            .catch(error => {
+                console.error('Lỗi khi gửi yêu cầu đến server', error);
+            });
+        }
+        document.getElementById('logoutBtn').addEventListener('click', logout);
+    </script>
+</body>
+</html>
