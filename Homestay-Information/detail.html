@@ -9,24 +9,40 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      background-color: #f8f9fa;
     }
 
     h1 {
-      text-align: center;
+      text-align: left;
       margin-top: 20px;
+      margin-left: 20px;
+      color: #343a40;
     }
 
     #destinationDetail {
-      max-width: 600px;
+      max-width: 800px;
       margin: 20px auto;
-      background-color: #f5f5f5;
+      background-color: #ffffff;
       padding: 20px;
-      border-radius: 5px;
+      border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      animation: slideInFromLeft 0.5s ease-out; 
+    }
+
+    @keyframes slideInFromLeft {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
     }
 
     #destinationDetail h2 {
       margin-top: 0;
+      color: #343a40;
     }
 
     #destinationDetail img {
@@ -34,19 +50,167 @@
       margin: 10px auto;
       max-width: 100%;
       height: auto;
-      border-radius: 5px;
+      border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     #destinationDetail p {
       margin-bottom: 10px;
+      color: #6c757d;
+    }
+
+    #destinationDetail .rating {
+      color: #ffc107;
+      font-weight: bold;
+    }
+
+    #destinationDetail .cost {
+      color: #28a745;
+      font-weight: bold;
+    }
+
+    #bookingButton {
+      display: block;
+      margin: 20px auto;
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s; 
+    }
+
+    #bookingButton:hover {
+      background-color: #0056b3;
+      transform: scale(1.1); 
+    }
+
+    /* Additional styles */
+    .additional-details {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .additional-details h3 {
+      color: #343a40;
+    }
+
+    .additional-details ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .additional-details ul li {
+      margin-bottom: 5px;
+    }
+
+    .additional-details a {
+      color: #007bff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .additional-details a:hover {
+      color: #0056b3;
+    }
+
+    /* Room types table */
+    .room-types-table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .room-types-table th, .room-types-table td {
+      border: 1px solid #dee2e6;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .room-types-table th {
+      background-color: #007bff;
+      color: #ffffff;
+    }
+
+    /* Adjustments for booking section */
+    .section-book {
+      background-color: #f8f9fa;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .form {
+      flex: 1;
+      margin-left: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-gap: 10px;
+    }
+
+    .grid input[type="date"],
+    .grid input[type="number"],
+    .grid input[type="submit"] {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ced4da;
+    }
+
+    .grid input[type="submit"] {
+      background-color: #007bff;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    .grid input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    /* Image gallery styles */
+    .image-gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .image-gallery img {
+      margin: 5px;
+      max-width: 150px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
 <body>
-  <h1>Homestay Details</h1>
+  <h1>HOMESTAY DETAIL</h1>
   <div id="destinationDetail"></div>
+  <section class="book section-book">
+    <div class="container">
+      <div class="form">
+        <form class="grid" id="bookingForm">
+          <input type="date" id="checkInDate" name="checkInDate" placeholder="Ngày đến" required>
+          <input type="date" id="checkOutDate" name="checkOutDate" placeholder="Ngày trả phòng" required>
+          <input type="number" id="numAdults" name="numAdults" placeholder="Người lớn" min="1" value="1" required>
+          <input type="number" id="numChildren" name="numChildren" placeholder="Trẻ em" min="0" value="0">
+          <input type="submit" value="Tìm">
+        </form>
+      </div>
+    </div>
+  </section>
 
+  <button id="bookingButton" onclick="bookNow()">Đặt Phòng Ngay</button>
 
   <script src="data.js"></script>
   <script>
@@ -60,15 +224,25 @@
       const detail = document.createElement('div');
       detail.innerHTML = `
         <h2>${destination.name}</h2>
+        <p>Địa chỉ: ${destination.address}</p>
         <img src="${destination.image}" alt="${destination.name}">
         <p>${destination.description}</p>
-        <p>Rating: ${destination.rating}</p>
-        <p>Cost: ${destination.cost}</p>
+        <p>Rating: <span class="rating">${destination.rating}</span></p>
+        <h3>Tổng Quan</h3>
+        <p>Tiện nghi: ${destination.amenities.join(', ')}</p>
+        <h3>Đánh Giá Khách Hàng</h3>
+        <p>${destination.reviews}</p>
       `;
       destinationDetailContainer.appendChild(detail);
     } else {
       destinationDetailContainer.textContent = 'Destination not found';
     }
+
+    function bookNow() {
+      alert('Bạn đã đặt phòng thành công !!');
+      window.location.href = 'index.html'; 
+    }
+
   </script>
 </body>
 </html>

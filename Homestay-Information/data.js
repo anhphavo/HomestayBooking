@@ -4,9 +4,11 @@ const destinations = [
       name: "Harmony Homestay",
       address:"152 Phan Thanh, Đà Nẵng",
       description: "Nằm tại vị trí thuận tiện ở Đà Nẵng, Harmony Homestay cung cấp các phòng điều hòa với Wi-Fi miễn phí và chỗ đậu xe riêng miễn phí. Ngoài dịch vụ phòng, chỗ nghỉ này còn có sân hiên. Du khách có thể thưởng thức đồ uống tại quầy bar. Tất cả các căn được trang bị TV màn hình phẳng có truyền hình cáp, tủ lạnh, ấm đun nước, vòi xịt/chậu rửa vệ sinh, đồ vệ sinh cá nhân miễn phí và bàn làm việc. Với phòng tắm riêng được trang bị vòi sen và máy sấy tóc, một số căn tại guest house cũng có view thành phố. Tại Harmony Homestay, tất cả các phòng đều có ga trải giường và khăn tắm. Chỗ nghỉ cách Bãi biển Thanh Bình 2.5 km và Bảo tàng điêu khắc Chăm 2 km. Sân bay gần nhất là Sân bay Quốc tế Đà Nẵng, cách Harmony Homestay 1 km.",
-      image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/293535054.jpg?k=d9754b17366db60ce8bb3ca264c03c6c0b7c994bdac6dc8b7caec73f7c5f69c2&o=&hp=1",
+      image:"https://cf.bstatic.com/xdata/images/hotel/max1024x768/293535054.jpg?k=d9754b17366db60ce8bb3ca264c03c6c0b7c994bdac6dc8b7caec73f7c5f69c2&o=&hp=1",
       rating: 9.2,
       cost: "238.095 VND",
+      reviews: "Đánh giá khách hàng về khách sạn 1.",
+      amenities: ["Wifi", "Bar"]
     },
     {
       id: 2,
@@ -16,6 +18,8 @@ const destinations = [
       image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/547222726.jpg?k=3175125ef08fc5a158c29644ec464d29cddb18abdbd2f02a4b6d5be313c0a6b2&o=&hp=1",
       rating: 8.8,
       cost: "450.000 VND",
+      reviews: "Đánh giá khách hàng về khách sạn 1.",
+      amenities: ["Wifi", "Có ban công"]
     },
     {
       id: 3,
@@ -25,6 +29,8 @@ const destinations = [
       image: "https://cf.bstatic.com/xdata/images/hotel/max1280x900/208112066.jpg?k=e36d3f9a85d0f162f08751107900d4ccc8402cae6c9fb08235f58c5240c94121&o=&hp=1",
       rating: 9.7,
       cost: "850.000 VND",
+      reviews: "Đánh giá khách hàng về khách sạn 1.",
+      amenities: ["Wifi"]
     },
     {
       id: 4,
@@ -34,6 +40,8 @@ const destinations = [
       image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/284082778.jpg?k=9409abe6595d852bf0ce102b180dd19d50a8d370b5d1ed6004fefb2700848ace&o=&hp=1",
       rating: 9.2,
       cost: "500.000 VND",
+      reviews: "Đánh giá khách hàng về khách sạn 1.",
+      amenities: ["Wifi"]
     },
     {
       id: 5,
@@ -43,6 +51,63 @@ const destinations = [
       image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/521467963.jpg?k=5085b3086c866495b68fa649cc932d5d5ee3af037ce8f9e2f5727b7cef4f81b1&o=&hp=1",
       rating: 9.2,
       cost: "300.000 VND",
+      reviews: "Đánh giá khách hàng về khách sạn 1.",
+      amenities: ["Wifi", "Chỗ đậu xe riêng miễn phí"]
+    },
+    {
+      id: 6,
+      name: "La Passion - Tay Ho Hanoi One Bedroom Apartment",
+      address:"52/28 Đường Tô Ngọc Vân Phòng 201 nhà số 7, Quận Tây Hồ, Hà Nội",
+      description: "La Passion - Tay Ho Hanoi One Bedroom Apartment! nhìn ra hồ, có Wi-Fi miễn phí và chỗ đậu xe riêng miễn phí, nằm ở Hà Nội, cách Hồ Tây 3.4 km. Chỗ nghỉ có điều hòa, bếp đầy đủ tiện nghi, TV màn hình phẳng, cũng như phòng tắm riêng với vòi sen, đồ vệ sinh cá nhân miễn phí và máy sấy tóc. Tủ lạnh và lò vi sóng, cũng như ấm đun nước đều được cung cấp. Khách có thể sử dụng sân hiên tại căn hộ. La Passion - Tay Ho Hanoi One Bedroom Apartment! cách Đền Quán Thánh 4.6 km và Ô Quan Chưởng 5.1 km. Sân bay gần nhất là Sân bay Quốc tế Nội Bài, cách chỗ nghỉ 18 km, đồng thời chỗ nghỉ này cũng cung cấp dịch vụ đưa đón sân bay mất phí.",
+      image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/521467963.jpg?k=5085b3086c866495b68fa649cc932d5d5ee3af037ce8f9e2f5727b7cef4f81b1&o=&hp=1",
+      rating: 9.2,
+      cost: "300.000 VND",
+      reviews: "Đánh giá khách hàng về khách sạn 1.",
+      amenities: ["Wifi", "Chỗ đậu xe riêng miễn phí"]
+    },
+    {
+      id: 7,
+      name: "La Passion - Tay Ho Hanoi One Bedroom Apartment",
+      address:"52/28 Đường Tô Ngọc Vân Phòng 201 nhà số 7, Quận Tây Hồ, Hà Nội",
+      description: "La Passion - Tay Ho Hanoi One Bedroom Apartment! nhìn ra hồ, có Wi-Fi miễn phí và chỗ đậu xe riêng miễn phí, nằm ở Hà Nội, cách Hồ Tây 3.4 km. Chỗ nghỉ có điều hòa, bếp đầy đủ tiện nghi, TV màn hình phẳng, cũng như phòng tắm riêng với vòi sen, đồ vệ sinh cá nhân miễn phí và máy sấy tóc. Tủ lạnh và lò vi sóng, cũng như ấm đun nước đều được cung cấp. Khách có thể sử dụng sân hiên tại căn hộ. La Passion - Tay Ho Hanoi One Bedroom Apartment! cách Đền Quán Thánh 4.6 km và Ô Quan Chưởng 5.1 km. Sân bay gần nhất là Sân bay Quốc tế Nội Bài, cách chỗ nghỉ 18 km, đồng thời chỗ nghỉ này cũng cung cấp dịch vụ đưa đón sân bay mất phí.",
+      image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/521467963.jpg?k=5085b3086c866495b68fa649cc932d5d5ee3af037ce8f9e2f5727b7cef4f81b1&o=&hp=1",
+      rating: 9.2,
+      cost: "300.000 VND",
+      reviews: "Đánh giá khách hàng về khách sạn 1.",
+      amenities: ["Wifi", "Chỗ đậu xe riêng miễn phí"]
+    },
+    {
+      id: 8,
+      name: "La Passion - Tay Ho Hanoi One Bedroom Apartment",
+      address:"52/28 Đường Tô Ngọc Vân Phòng 201 nhà số 7, Quận Tây Hồ, Hà Nội",
+      description: "La Passion - Tay Ho Hanoi One Bedroom Apartment! nhìn ra hồ, có Wi-Fi miễn phí và chỗ đậu xe riêng miễn phí, nằm ở Hà Nội, cách Hồ Tây 3.4 km. Chỗ nghỉ có điều hòa, bếp đầy đủ tiện nghi, TV màn hình phẳng, cũng như phòng tắm riêng với vòi sen, đồ vệ sinh cá nhân miễn phí và máy sấy tóc. Tủ lạnh và lò vi sóng, cũng như ấm đun nước đều được cung cấp. Khách có thể sử dụng sân hiên tại căn hộ. La Passion - Tay Ho Hanoi One Bedroom Apartment! cách Đền Quán Thánh 4.6 km và Ô Quan Chưởng 5.1 km. Sân bay gần nhất là Sân bay Quốc tế Nội Bài, cách chỗ nghỉ 18 km, đồng thời chỗ nghỉ này cũng cung cấp dịch vụ đưa đón sân bay mất phí.",
+      image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/521467963.jpg?k=5085b3086c866495b68fa649cc932d5d5ee3af037ce8f9e2f5727b7cef4f81b1&o=&hp=1",
+      rating: 9.2,
+      cost: "300.000 VND",
+      reviews: "Đánh giá khách hàng về khách sạn 1.",
+      amenities: ["Wifi", "Chỗ đậu xe riêng miễn phí"]
+    },
+    {
+      id: 9,
+      name: "La Passion - Tay Ho Hanoi One Bedroom Apartment",
+      address:"52/28 Đường Tô Ngọc Vân Phòng 201 nhà số 7, Quận Tây Hồ, Hà Nội",
+      description: "La Passion - Tay Ho Hanoi One Bedroom Apartment! nhìn ra hồ, có Wi-Fi miễn phí và chỗ đậu xe riêng miễn phí, nằm ở Hà Nội, cách Hồ Tây 3.4 km. Chỗ nghỉ có điều hòa, bếp đầy đủ tiện nghi, TV màn hình phẳng, cũng như phòng tắm riêng với vòi sen, đồ vệ sinh cá nhân miễn phí và máy sấy tóc. Tủ lạnh và lò vi sóng, cũng như ấm đun nước đều được cung cấp. Khách có thể sử dụng sân hiên tại căn hộ. La Passion - Tay Ho Hanoi One Bedroom Apartment! cách Đền Quán Thánh 4.6 km và Ô Quan Chưởng 5.1 km. Sân bay gần nhất là Sân bay Quốc tế Nội Bài, cách chỗ nghỉ 18 km, đồng thời chỗ nghỉ này cũng cung cấp dịch vụ đưa đón sân bay mất phí.",
+      image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/521467963.jpg?k=5085b3086c866495b68fa649cc932d5d5ee3af037ce8f9e2f5727b7cef4f81b1&o=&hp=1",
+      rating: 9.2,
+      cost: "300.000 VND",
+      reviews: "Đánh giá khách hàng về khách sạn 1.",
+      amenities: ["Wifi", "Chỗ đậu xe riêng miễn phí"]
+    },
+    {
+      id: 10,
+      name: "La Passion - Tay Ho Hanoi One Bedroom Apartment",
+      address:"52/28 Đường Tô Ngọc Vân Phòng 201 nhà số 7, Quận Tây Hồ, Hà Nội",
+      description: "La Passion - Tay Ho Hanoi One Bedroom Apartment! nhìn ra hồ, có Wi-Fi miễn phí và chỗ đậu xe riêng miễn phí, nằm ở Hà Nội, cách Hồ Tây 3.4 km. Chỗ nghỉ có điều hòa, bếp đầy đủ tiện nghi, TV màn hình phẳng, cũng như phòng tắm riêng với vòi sen, đồ vệ sinh cá nhân miễn phí và máy sấy tóc. Tủ lạnh và lò vi sóng, cũng như ấm đun nước đều được cung cấp. Khách có thể sử dụng sân hiên tại căn hộ. La Passion - Tay Ho Hanoi One Bedroom Apartment! cách Đền Quán Thánh 4.6 km và Ô Quan Chưởng 5.1 km. Sân bay gần nhất là Sân bay Quốc tế Nội Bài, cách chỗ nghỉ 18 km, đồng thời chỗ nghỉ này cũng cung cấp dịch vụ đưa đón sân bay mất phí.",
+      image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/521467963.jpg?k=5085b3086c866495b68fa649cc932d5d5ee3af037ce8f9e2f5727b7cef4f81b1&o=&hp=1",
+      rating: 9.2,
+      cost: "300.000 VND",
+      reviews: "Đánh giá khách hàng về khách sạn 1.",
+      amenities: ["Wifi", "Chỗ đậu xe riêng miễn phí"]
     },
   ];
 

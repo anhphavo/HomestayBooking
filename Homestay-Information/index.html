@@ -6,27 +6,122 @@
   <title>Homestay Booking</title>
 
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    }
+
+    .container-fluid {
+      padding-top: 20px;
+    }
+
+    .sticky-top {
+      top: 70px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+      border: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      border-radius: 10px;
+      max-height: 15cm; /* Set maximum height to 15 cm */
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-img-container {
+      width: 7cm;
+      height: 7cm;
+      overflow: hidden;
+      flex-shrink: 0;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+
+    .card-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-body {
+      flex: 1;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin: 0 0 10px 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .card-title span {
+      margin-left: 10px;
+      font-size: 1rem;
+      color: #ffcc00;
+    }
+
+    .card-text {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .card-caption {
+      font-size: 0.875rem;
+      color: #6c757d;
+      margin-top: 10px;
+    }
+
+    .btn-details {
+      align-self: flex-end;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.875rem;
+    }
+
+    .section-book {
+      margin-bottom: 2cm;
+    }
+
+    .btn-small {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.875rem;
+    }
+
+  </style>
 </head>
 <body>
   <div class="container-fluid">
     <div class="row">
- 
       <div class="col-md-3">
-        <div class="sticky-top pt-4"> <!-- Sticky-top để giữ sidebar ở vị trí cố định khi cuộn -->
-
+        <div class="sticky-top pt-4">
           <div class="card mb-4">
             <h5 class="card-header">Chọn lọc theo</h5>
             <div class="card-body">
-   
               <div class="form-group">
                 <label for="filterLocation">Địa Điểm:</label>
                 <select class="form-control" id="filterLocation">
+                  <option value="All">Chọn Thành phố</option>
                   <option value="Đà Nẵng">Đà Nẵng</option>
                   <option value="Huế">Huế</option>
                   <option value="Thành phố Hồ Chí Minh">Thành phố Hồ Chí Minh</option>
                   <option value="Hà Nội">Hà Nội</option>
-                  <option value="Nha trang ">Nha trang</option>
-        
+                  <option value="Nha trang">Nha trang</option>
                 </select>
               </div>
 
@@ -37,10 +132,9 @@
                   <option value="5">5 stars</option>
                   <option value="4">4 stars</option>
                   <option value="3">3 stars</option>
-    
                 </select>
               </div>
-   
+
               <div class="form-group">
                 <label for="filterAmenities">Tiện ích:</label>
                 <div class="form-check">
@@ -51,30 +145,52 @@
                   <input class="form-check-input" type="checkbox" id="amenityWifi">
                   <label class="form-check-label" for="amenityWifi">Wi-Fi</label>
                 </div>
-
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="amenityParking">
+                  <label class="form-check-label" for="amenityParking">Bãi đỗ xe</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="amenityBreakfast">
+                  <label class="form-check-label" for="amenityBreakfast">Bữa sáng miễn phí</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="amenityGym">
+                  <label class="form-check-label" for="amenityGym">Phòng tập gym</label>
+                </div>
               </div>
 
-              <button type="button" class="btn btn-primary">Tìm kiếm chọn lọc</button>
+              <button type="button" class="btn btn-primary btn-small" onclick="filterDestinations()">Tìm kiếm chọn lọc</button>
             </div>
           </div>
         </div>
       </div>
-      
-
 
       <div class="col-md-9">
         <div class="container">
           <h1 class="mt-5 mb-4">Homestay Booking</h1>
 
-
           <form id="searchForm" class="mb-4">
             <div class="form-group">
-              <label for="searchTerm">Search by Name:</label>
+              <label for="searchTerm">Tìm kiếm phòng:</label>
               <input type="text" id="searchTerm" name="searchTerm" class="form-control" required>
             </div>
             <button type="submit" class="btn btn-primary">Tìm Kiếm</button>
           </form>
 
+          <section class="book section-book">
+            <div class="container flex-space">
+              <div class="text"></div>
+              <div class="form">
+                <form class="grid">
+                  <input type="date" placeholder="Ngày đến">
+                  <input type="date" placeholder="Ngày trả phòng">
+                  <input type="number" placeholder="Người lớn">
+                  <input type="number" placeholder="Trẻ em">
+                  <input type="submit" value="Tìm">
+                </form>
+              </div>
+            </div>
+          </section>
 
           <div id="destinationsContainer" class="row"></div>
         </div>
@@ -82,30 +198,30 @@
     </div>
   </div>
 
-
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  
 
   <script src="data.js"></script>
   <script>
     const destinationsContainer = document.getElementById('destinationsContainer');
     const searchForm = document.getElementById('searchForm');
 
-
     function displayDestinations(dests) {
-      destinationsContainer.innerHTML = ''; 
+      destinationsContainer.innerHTML = '';
       dests.forEach(destination => {
         const card = document.createElement('div');
-        card.classList.add('col-md-4', 'mb-3');
+        card.classList.add('col-12', 'mb-4');
         card.innerHTML = `
           <div class="card">
-            <img src="${destination.image}" class="card-img-top" alt="${destination.name}">
+            <div class="card-img-container">
+              <img src="${destination.image}" class="card-img-top" alt="${destination.name}">
+            </div>
             <div class="card-body">
-              <h5 class="card-title">${destination.name}</h5>
+              <h5 class="card-title">${destination.name} <span>${'★'.repeat(destination.rating)}</span></h5>
               <p class="card-text">${destination.description.substring(0, 100)}...</p>
-              <a href="detail.html?id=${destination.id}" class="btn btn-primary">View Details</a>
+              ${destination.caption ? `<p class="card-caption">Chú thích: ${destination.caption}</p>` : ''}
+              <a href="detail.html?id=${destination.id}" class="btn btn-primary btn-details">Xem Chi tiết</a>
             </div>
           </div>
         `;
@@ -113,16 +229,24 @@
       });
     }
 
-  
     searchForm.addEventListener('submit', function(event) {
       event.preventDefault();
-      const searchTerm = document.getElementById('searchTerm').value.trim().toLowerCase();
-
-      const searchResults = destinations.filter(dest => dest.name.toLowerCase().includes(searchTerm));
-      displayDestinations(searchResults);
+      filterDestinations();
     });
 
-   
+    function filterDestinations() {
+      const searchTerm = document.getElementById('searchTerm').value.trim().toLowerCase();
+      const selectedAmenities = Array.from(document.querySelectorAll('.form-check-input:checked')).map(checkbox => checkbox.id);
+
+      const searchResults = destinations.filter(dest => {
+        const nameMatch = dest.name.toLowerCase().includes(searchTerm);
+        const amenitiesMatch = selectedAmenities.every(amenity => dest.amenities.includes(amenity));
+        return nameMatch && amenitiesMatch;
+      });
+
+      displayDestinations(searchResults);
+    }
+
     displayDestinations(destinations);
   </script>
 </body>
