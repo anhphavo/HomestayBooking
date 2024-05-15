@@ -97,28 +97,14 @@ function initForm() {
       valid: false,
       errorMessage: "",
     },
-    subject: {
-      select: "Choose Option",
-    },
     confirm: {
       value: "",
     },
   };
 }
 
-// Interface - done
-// function initForm - done
-// function validate fields - not yet - 2 day
-// save to localStorage - not yet -
-
-////////////////////////////////////////////////////////////////////////////////////////////////
-function changeSubject(){
-  signUpForm.subject.select = document.getElementById("subject").value;
-}
-
 ///////////////////////////////////////////////   firstName  /////////////////////////////////////////////////
 
-// FIX: function name should be in camel case format, setFirstNameInvalid instead of setFirstNameInvalid
 function setFirstNameInvalid(message) {
   signUpForm.firstName.valid = false;
   signUpForm.firstName.errorMessage = message;
@@ -368,7 +354,6 @@ function saveToLocalStorage() {
     email: signUpForm.email.value,
     areaCode: signUpForm.areaCode.value,
     phoneNumber: signUpForm.phoneNumber.value,
-    select: signUpForm.subject.select,
   });
 
   localStorage.setItem('user_records', JSON.stringify(user_records));
