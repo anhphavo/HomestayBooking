@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quản lý Đặt Chỗ HomeStay</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css" integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.bundle.min.js" integrity="sha512-sH8JPhKJUeA9PWk3eOcOl8U+lfZTgtBXD41q6cO/slwxGHCxKcW45K4oPCUhHG7NMB4mbKEddVmPuTXtpbCbFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="header">
+        <div id="bg-left" style="border-top-right-radius: 18px;">
+            <div class="logo" >
+                <div class="name_logo">
+                    <h3>
+                        <a>Admin</a>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="user_name ">
+            <div class="ChucVu" style="font-weight: bold;  margin-right: 20px; margin-top: 5px; font-size: 18px; border: 2px solid rgb(13, 112, 2); border-radius: 10px; padding: 5px 15px; height: 40px;">
+            </div>
+            <a href="#">
+                <div class="name" style="font-weight: bold;  margin-right: 10px; font-size: 18px;">
+                </div>
+                <i class="fas fa-user"></i>
+            </a>
+        </div>
+    </div>
+    <div class="content_menu" style="display: flex; ">
+        <div id="bg-left" style="padding-bottom: 100px; border-bottom-left-radius: 18px;">
+            <div class="list_menu" style="margin-top: 20px;">
+                <div class="line_menu">
+                    <hr style="height: 2px; margin-top: 13px;">
+                    <div class="text" style="width: 800px;">Quản lý tài khoản</div>
+                    <hr style="height: 2px; margin-top: 13px;">
+                </div>
+                <ul>
+                    <li>
+                        <a class="item" href="../qltk/qltk.html">
+                            <div class="icon">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <div class="text">
+                                Chỉnh sửa thông tin
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="list_menu" style="margin-top: 20px;">
+                <div class="line_menu">
+                    <hr style="height: 2px; margin-top: 13px;">
+                    <div class="text" style="width: 800px;">Quản lý đặt chổ của khách</div>
+                    <hr style="height: 2px; margin-top: 13px;">
+                </div>
+                <ul>
+                    <li>
+                       
+                        <a class="item">
+                            <div class="icon">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <div class="text">
+                                Chỉnh sửa thông tin
+                            </div>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="list_menu" style="margin-top: 20px;">
+                <div class="line_menu">
+                    <hr style="height: 2px; margin-top: 13px;">
+                    <div class="text" style="width: 800px;">Quản lý HomeStay</div>
+                    <hr style="height: 2px; margin-top: 13px;">
+                </div>
+                <ul>
+                    <li>
+                        <a class="item" href="../qlp/index.html">
+                            <div class="icon">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <div class="text">
+                                Chỉnh sửa thông tin
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Khung bên phải -->
+<div id="rightPanel">
+    <h2 style="font-family: 'Arial', sans-serif;">Quản lý đặt chỗ của khách</h2>
+
+    <!-- Form để nhập dữ liệu -->
+    <form id="bookingForm">
+        <label for="fullName">Tên đầy đủ:</label>
+        <input type="text" id="fullName" name="fullName" required>
+        <label for="phoneNumber">Số điện thoại:</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" required>
+        <label for="email">Địa chỉ email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="numGuests">Số lượng khách đặt phòng:</label>
+        <input type="number" id="numGuests" name="numGuests" min="1" required>
+        <label for="roomType">Loại phòng muốn đặt:</label>
+        <select id="roomType" name="roomType" required>
+            <option value="single">Phòng đơn</option>
+            <option value="double">Phòng đôi</option>
+        </select>
+        <label for="numRooms">Số lượng phòng:</label>
+        <input type="number" id="numRooms" name="numRooms" min="1" required>
+        <label for="checkIn">Ngày giờ vào:</label>
+        <input type="datetime-local" id="checkIn" name="checkIn" required>
+        <label for="checkOut">Ngày giờ ra:</label>
+        <input type="datetime-local" id="checkOut" name="checkOut" required>
+        <label for="paymentMethod">Phương thức thanh toán:</label>
+        <select id="paymentMethod" name="paymentMethod" required>
+            <option value="chon noi dung thanh toan">Chọn nội dung thanh toán</option>
+            <option value="postpaid">Thanh toán sau</option>
+            <option value="creditCard">Thẻ tín dụng</option>
+            <option value="cash">Tiền mặt</option>
+            <option value="bankTransfer">Chuyển khoản ngân hàng</option>
+        </select>
+        <label for="paymentDetails">Thông tin thanh toán:</label>
+        <input type="text" id="paymentDetails" name="paymentDetails">
+        <button class="btn-submit" type="submit">Đặt Chỗ</button>
+    </form>
+    <!-- Bảng hiển thị dữ liệu -->
+    <table id="bookingTable">
+        <thead>
+            <tr>
+                <th>Tên Đầy Đủ</th>
+                <th>Số Điện Thoại</th>
+                <th>Email</th>
+                <th>Loại Phòng</th>
+                <th>Số Lượng Phòng</th>
+                <th>Thời Gian Đặt Chỗ</th>
+                <th>Phương Thức Thanh Toán</th>
+                <th>Thông Tin Thanh Toán</th>
+                <th>Hành Động</th>
+            </tr>
+        </thead>
+        <tbody id="bookingData">
+        </tbody>
+    </table>
+    <!-- Nội dung của khung bên phải -->
+</div>
+
+<!-- Khung bên trái -->
+<div id="leftPanel">
+    <!-- Nội dung của khung bên trái -->
+</div>
+
+<script src="qldc.js"></script>
+</body>
+</html>
