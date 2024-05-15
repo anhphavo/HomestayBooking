@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-body{
+
+body {
+    background-image: url('../css/background.png');
+    background-size: cover;
+    background-position: center;
     font-family:poppins;
 }
 form{
@@ -85,17 +89,6 @@ input#email {
     margin-left: 45px;
     width: 347px;
 }
-.selection{
-    display: flex;
-    margin-bottom: 20px;
-}
-select#subject {
-    margin-left: 33px;
-    background-color: #E6E6E6;
-    border: none;
-    width: 350px;
-    height: 30px;
-}
 .isExist{
     display: flex;
     margin-bottom: 20px;
@@ -144,8 +137,7 @@ input#yes, input#no {
 #phoneNumber-error,
 #areaCode-error,
 #email-error,
-#confirmPassword-error,
-#subject-error {
+#confirmPassword-error {
     color: red;
     margin-top: -10px;
     margin-bottom: 10px;

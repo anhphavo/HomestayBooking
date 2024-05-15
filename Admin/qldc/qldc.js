@@ -34,7 +34,7 @@ bookingForm.addEventListener("submit", function(event) {
   };
 
   bookings.push(booking);
-  displayBookings(); // Hiển thị danh sách sau khi thêm
+  displayBookings(); 
   bookingForm.reset();
 });
 
@@ -88,7 +88,7 @@ function editBooking(index) {
     booking.paymentMethod = newPaymentMethod;
     booking.paymentDetails = newPaymentDetails;
 
-    displayBookings(); // Hiển thị danh sách sau khi sửa
+    displayBookings(); 
   }
 }
 
@@ -97,8 +97,8 @@ function deleteBooking(index) {
   const confirmation = confirm("Bạn có chắc chắn muốn xóa?");
   if (confirmation) {
     bookings.splice(index, 1);
-    displayBookings(); // Hiển thị danh sách sau khi xóa
+    displayBookings(); 
   }
 }
 
-displayBookings(); // Hiển thị danh sách khi trang được tải lần đầu
+displayBookings(); 

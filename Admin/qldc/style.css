@@ -137,7 +137,7 @@ input, select {
 
 .btn-home,
 .btn-submit {
-background-color: #0d8f12; /* Màu xanh lá cây */
+background-color: #0d8f12; 
 border: none;
 color: white;
 padding: 10px 28px;
@@ -147,8 +147,8 @@ display: inline-block;
 font-size: 20px;
 margin: 4px 2px;
 cursor: pointer;
-border-radius: 10px; /* Cong tròn góc */
-transition: background-color 0.5s; /* Hiệu ứng chuyển đổi màu sắc */
+border-radius: 10px;
+transition: background-color 0.5s; 
 }
 
 
@@ -183,21 +183,20 @@ th, td {
   border-bottom: 1px solid #ddd;
 }
 
-/*moi
-/* CSS cho khung bên phải */
+
 #rightPanel {
-  width: 850px; /* Độ rộng */
-  max-height: 90%; /* Chiều cao tối đa */
-  overflow-y: auto; /* Cho phép cuộn khi nội dung vượt quá kích thước */
-  background-color: #ffffff; /* Màu nền trắng */
-  border: 2px solid #4caf50; /* Viền màu xanh lá */
-  border-radius: 20px; /* Góc tròn */
-  position: fixed; /* Đặt vị trí cố định */
-  top: 2.5%; /* Đặt vị trí cao hơn 5% so với phía trên cùng */
-  right: 51%; /* Đặt vị trí vào giữa theo chiều ngang và dịch sang phải 1% */
-  transform: translateX(60%); /* Dịch chuyển vị trí sang phải 50% */
-  z-index: 999; /* Độ sâu của khung */
-  padding: 40px; /* Khoảng cách đến nội dung */
+  width: 850px; 
+  max-height: 90%; 
+  overflow-y: auto;
+  background-color: #ffffff; 
+  border: 2px solid #4caf50; 
+  border-radius: 20px;
+  position: fixed; 
+  top: 2.5%; 
+  right: 51%; 
+  transform: translateX(60%); 
+  z-index: 999; 
+  padding: 40px; 
 }
 
 
@@ -340,7 +339,7 @@ box-sizing: border-box;
 
 .btn-home,
 .btn-submit {
-background-color: #0d8f12; /* Màu xanh lá cây */
+background-color: #0d8f12; 
 border: none;
 color: white;
 padding: 10px 28px;
@@ -350,8 +349,8 @@ display: inline-block;
 font-size: 20px;
 margin: 4px 2px;
 cursor: pointer;
-border-radius: 10px; /* Cong tròn góc */
-transition: background-color 0.5s; /* Hiệu ứng chuyển đổi màu sắc */
+border-radius: 10px; 
+transition: background-color 0.5s; 
 }
 
 
@@ -385,7 +384,7 @@ padding: 8px;
 text-align: left;
 border-bottom: 1px solid #ddd;
 }
-/* CSS cho khung sửa và xóa */
+
 
 
 
@@ -396,8 +395,8 @@ border-bottom: 1px solid #ddd;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  float: right; /* Di chuyển nút sửa sang bên phải */
-  margin-right: 20px; /* Tạo khoảng cách giữa nút sửa và nút xóa */
+  float: right; 
+  margin-right: 20px;
 }
 
 .delete-button {
@@ -407,12 +406,12 @@ border-bottom: 1px solid #ddd;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  float: right; /* Di chuyển nút xóa sang bên phải */
+  float: right; 
   margin-right: 20px;
 }
-/* CSS cho các hàng dữ liệu */
+
 #accountData div {
-  margin-bottom: 80px; /* Tạo khoảng cách giữa các hàng */
+  margin-bottom: 80px; 
 }
 
 

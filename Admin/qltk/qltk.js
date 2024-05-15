@@ -20,7 +20,7 @@ accountForm.addEventListener("submit", function(event) {
   }
 
   accounts.push({ username, password });
-  displayAccounts(); // Hiển thị danh sách sau khi thêm
+  displayAccounts(); 
   accountForm.reset();
 });
 
@@ -43,7 +43,7 @@ function editAccount(index) {
   const newPassword = prompt("Nhập mật khẩu mới:", accounts[index].password);
   if (newUsername !== null && newPassword !== null) {
     accounts[index] = { username: newUsername, password: newPassword };
-    displayAccounts(); // Hiển thị danh sách sau khi sửa
+    displayAccounts();
   }
 }
 
@@ -51,8 +51,8 @@ function deleteAccount(index) {
   const confirmation = confirm("Bạn có chắc chắn muốn xóa?");
   if (confirmation) {
     accounts.splice(index, 1);
-    displayAccounts(); // Hiển thị danh sách sau khi xóa
+    displayAccounts(); 
   }
 }
 
-displayAccounts(); // Hiển thị danh sách khi trang được tải lần đầu
+displayAccounts(); 
