@@ -6,22 +6,18 @@
     <title>Trang Web Đăng Nhập</title>
 </head>
 <body>
-    <!-- Nút để đăng xuất -->
     <button id="logoutBtn">Đăng xuất</button>
 
     <script>
-        // JavaScript để xử lý đăng xuất
         function logout() {
             fetch('/logout', {
-                method: 'POST', // Gửi yêu cầu dưới dạng POST
-                credentials: 'same-origin' // Đảm bảo gửi cookies nếu có
+                method: 'POST',
+                credentials: 'same-origin' 
             })
             .then(response => {
                 if (response.ok) {
-                    // Nếu đăng xuất thành công, chuyển hướng về trang đăng nhập
                     window.location.href = '/login';
                 } else {
-                    // Xử lý lỗi nếu có
                     console.error('Đăng xuất không thành công');
                 }
             })
@@ -29,8 +25,6 @@
                 console.error('Lỗi khi gửi yêu cầu đến server', error);
             });
         }
-
-        // Gắn sự kiện click vào nút đăng xuất
         document.getElementById('logoutBtn').addEventListener('click', logout);
     </script>
 </body>
