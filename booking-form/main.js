@@ -38,5 +38,9 @@ function displaySelectionAndPrice() {
     document.getElementById('test').innerHTML =
     "Congratulations " + person['firstName'] + " " + person['lastName'] + " !! <br> You are booking " + hotels[i] + 
     " Hotel. <br> Number of days: " + days + " <br>Daily Rate: R" + dayRates[i] + "pps <br>Total: " + total +
-    '   <button type="button" class="btn-outline-secondary float-right"> Go to Checkout </button>';
-    }
+    '   <button type="button" class="btn-outline-secondary float-right" onclick = "redirectToCheckout()"> Go to Checkout </button>';
+}
+
+function redirectToCheckout(){
+    window.location.href = 'http://127.0.0.1:5502/Payment/index.html?#';
+}
