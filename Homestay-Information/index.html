@@ -103,9 +103,83 @@
       font-size: 0.875rem;
     }
 
+   
+    #header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    #header .logo img {
+      width: 100px;
+    }
+
+    #menu {
+      display: flex;
+      align-items: center;
+    }
+
+    #menu .item {
+      margin-left: 20px;
+    }
+
+    #menu .item a {
+      text-decoration: none;
+      color: #000000;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    #menu .item a:hover {
+      color: #007bff;
+    }
+
+    #actions {
+      display: flex;
+      align-items: center;
+    }
+
+    #actions .items {
+      margin-left: 20px;
+    }
   </style>
 </head>
 <body>
+  <div id="wrapper">
+    <div id="header">
+      <a href="" class="logo">
+        <img src="../homepage/assets/HomestayBooking.png" alt="">
+      </a>
+      <div id="menu">
+        <div class="item">
+          <a href="">Trang chủ</a>
+        </div>
+        <div class="item">
+          <a href="">Phòng</a>
+        </div>
+        <div class="item">
+          <a href="" id="booking">Đặt Phòng</a>
+        </div>
+        <div class="item">
+          <a href="">Liên hệ</a>
+        </div>
+      </div>
+      <div id="actions">
+        <div class="items">
+          <img src="../homepage/assets/user.png" alt="" style="width: 20px;">
+        </div>
+        <div class="item">
+          <img src="../homepage/assets/card.png" alt="" style="width: 20px;">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="banner">
+    <div class="box-left">
+
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3">
@@ -177,21 +251,6 @@
             <button type="submit" class="btn btn-primary">Tìm Kiếm</button>
           </form>
 
-          <section class="book section-book">
-            <div class="container flex-space">
-              <div class="text"></div>
-              <div class="form">
-                <form class="grid">
-                  <input type="date" placeholder="Ngày đến">
-                  <input type="date" placeholder="Ngày trả phòng">
-                  <input type="number" placeholder="Người lớn">
-                  <input type="number" placeholder="Trẻ em">
-                  <input type="submit" value="Tìm">
-                </form>
-              </div>
-            </div>
-          </section>
-
           <div id="destinationsContainer" class="row"></div>
         </div>
       </div>
@@ -205,49 +264,88 @@
   <script src="data.js"></script>
   <script>
     const destinationsContainer = document.getElementById('destinationsContainer');
-    const searchForm = document.getElementById('searchForm');
+const searchForm = document.getElementById('searchForm');
 
-    function displayDestinations(dests) {
-      destinationsContainer.innerHTML = '';
-      dests.forEach(destination => {
-        const card = document.createElement('div');
-        card.classList.add('col-12', 'mb-4');
-        card.innerHTML = `
-          <div class="card">
-            <div class="card-img-container">
-              <img src="${destination.image}" class="card-img-top" alt="${destination.name}">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">${destination.name} <span>${'★'.repeat(destination.rating)}</span></h5>
-              <p class="card-text">${destination.description.substring(0, 100)}...</p>
-              ${destination.caption ? `<p class="card-caption">Chú thích: ${destination.caption}</p>` : ''}
-              <a href="detail.html?id=${destination.id}" class="btn btn-primary btn-details">Xem Chi tiết</a>
-            </div>
-          </div>
-        `;
-        destinationsContainer.appendChild(card);
-      });
+document.getElementById('filterLocation').addEventListener('change', function() {
+  // Lấy giá trị của thành phố được chọn
+  const selectedCity = this.value;
+
+  // Lặp qua mỗi card và kiểm tra thành phố của nó
+  document.querySelectorAll('.card').forEach(card => {
+    // Lấy dữ liệu thành phố từ thuộc tính data-city của card
+    const city = card.getAttribute('data-city');
+
+    // So sánh thành phố của card với thành phố được chọn
+    if (selectedCity === 'All' || city === selectedCity) {
+      // Hiển thị card nếu thành phố khớp hoặc đang chọn tất cả các thành phố
+      card.style.display = 'block';
+    } else {
+      // Ẩn card nếu không khớp
+      card.style.display = 'none';
     }
+  });
+});
 
-    searchForm.addEventListener('submit', function(event) {
-      event.preventDefault();
-      filterDestinations();
-    });
+function displayDestinations(dests) {
+  destinationsContainer.innerHTML = '';
+  dests.forEach(destination => {
+    const card = document.createElement('div');
+    card.classList.add('col-12', 'mb-4');
+    card.setAttribute('data-city', destination.location); // Thêm thuộc tính data-city để lọc theo thành phố
 
-    function filterDestinations() {
-      const searchTerm = document.getElementById('searchTerm').value.trim().toLowerCase();
-      const selectedAmenities = Array.from(document.querySelectorAll('.form-check-input:checked')).map(checkbox => checkbox.id);
+    const randomRating = getRandomRating();
+    const starRating = getStarRating(randomRating);
 
-      const searchResults = destinations.filter(dest => {
-        const nameMatch = dest.name.toLowerCase().includes(searchTerm);
-        const amenitiesMatch = selectedAmenities.every(amenity => dest.amenities.includes(amenity));
-        return nameMatch && amenitiesMatch;
-      });
+    card.innerHTML = `
+      <div class="card">
+        <div class="card-img-container">
+          <img src="${destination.image}" class="card-img-top" alt="${destination.name}">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">${destination.name} <span>${starRating}</span></h5>
+          <p class="card-text">${destination.description.substring(0, 100)}...</p>
+          ${destination.caption ? `<p class="card-caption">Chú thích: ${destination.caption}</p>` : ''}
+          <p class="cost">Giá: ${destination.cost}</p>
+          <a href="detail.html?id=${destination.id}" class="btn btn-primary btn-details">Xem Chi tiết</a>
+        </div>
+      </div>
+    `;
+    destinationsContainer.appendChild(card);
+  });
+}
 
-      displayDestinations(searchResults);
-    }
+function getRandomRating() {
+  const ratings = [4, 5];
+  return ratings[Math.floor(Math.random() * ratings.length)];
+}
 
-    displayDestinations(destinations);
+function getStarRating(rating) {
+  const fullStars = Math.floor(rating);
+  const halfStar = rating % 1 ? '★' : '';
+  const emptyStars = 5 - Math.ceil(rating);
+  return '★'.repeat(fullStars) + halfStar + '☆'.repeat(emptyStars);
+}
+
+searchForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+  filterDestinations();
+});
+
+function filterDestinations() {
+  const searchTerm = document.getElementById('searchTerm').value.trim().toLowerCase();
+  const selectedAmenities = Array.from(document.querySelectorAll('.form-check-input:checked')).map(checkbox => checkbox.id);
+
+  const searchResults = destinations.filter(dest => {
+    const nameMatch = dest.name.toLowerCase().includes(searchTerm);
+    const amenitiesMatch = selectedAmenities.every(amenity => dest.amenities.includes(amenity));
+    return nameMatch && amenitiesMatch;
+  });
+
+  displayDestinations(searchResults);
+}
+
+displayDestinations(destinations);
+
   </script>
 </body>
 </html>
