@@ -6,36 +6,96 @@ body{
     background-position: center;
 }
 
-h1{
-    text-align: center;
-    margin-bottom: 20px;
-}
-label{
-    display: flex;
-    
-    font-weight: bold;
-}
-* {
-    font-family: 'Poppins', sans-serif;
-    padding: 0;
-    margin: 0;
-}
-#login-form {
-    max-width: 400px;
-    margin: 0 auto;
-    background-color: #fff;
+
+#booking-form {
+    max-width: 800px;
+    margin: auto;
+    background: white;
     padding: 20px;
-    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+
+h1, h2 {
     text-align: center;
-    padding: 50px;
 }
 
-#checkbox{
-    display: flex;
-    margin-bottom: 10px;    
+.room {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+}
+
+.room p {
+    margin: 0 0 10px;
+}
+
+.add-room {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background: #1a4ea8;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.add-room:hover {
+    background: #1c0582;
+}
+
+#selected-rooms {
+    margin-top: 20px;
+}
+
+#selected-rooms table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#selected-rooms th, #selected-rooms td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+#selected-rooms th {
+    background: #f1f1f1;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #0860bf;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+.btn-danger {
+    background: #dc3545;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+}
+
+.btn-outline-success {
+    background: white;
+    color: #28a745;
+    border: 1px solid #28a745;
+}
+
+.btn-outline-success:hover {
+    background: #28a745;
+    color: white;
+}
+
+#payment-form {
+    display: none;
 }
