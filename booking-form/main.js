@@ -2,7 +2,6 @@ var hotels = ["Maldives", "Bali", "Thailand"];
 var dayRates = [1000, 900, 800];
 var i = 0;
 
-//function to validate form inputs
 function validateForm() {
     var firstname = document.forms["hotelForm"]["firstname"].value;
     var lastname = document.forms["hotelForm"]["lastname"].value;
@@ -20,14 +19,12 @@ function validateForm() {
     }
 }
 
-//function to display the hotel choice selected and the daily rate of that hotel
 function displayHotelAndDayRate(x) {
         document.getElementById('hotels').innerHTML = hotels[x] + ' Hotel ' + dayRates[x] + ' per night, pps';
         
     i = x;
 }
 
-//function that displays a breakdown of hotel, daily rate, days and total price
 function displaySelectionAndPrice() {
 
     var person = {
