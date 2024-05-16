@@ -18,14 +18,23 @@
                     <a href="">Trang chủ</a>
                 </div>
                 <div class="item">
-                    <a href="">Phòng</a>
+                    <a href="../Admin/index1.html">Phòng</a>
                 </div>
                 <div class="item">
-                    <a href="" id="booking">Đặt Phòng</a>
+                    <a href="../booking-form/index.html" id="booking">Đặt Phòng</a>
                 </div>
                 <div class="item">
-                    <a href="">Liên hệ</a>
+                    <a href="../contact-page/form.html">Liên hệ</a>
                 </div>
+                <div class="item search-container" style="margin-left: auto; position: relative;">
+                    <input type="text" id="searchInput" placeholder="Search..." onkeyup="searchRooms()">
+                    
+                </div>
+                <!-- Additional Search Box -->
+                <div class="item search-container small-input" style="position: relative;">
+                    <input type="text" id="searchInput2" class="location-input" placeholder="Enter location..." readonly>
+                </div>
+            
             </div>
             
             <div id="actions">
@@ -36,10 +45,10 @@
                     <img src="../homepage/assets/card.png" alt="" style="width: 20px;">
                 </div>
                 <div class="item">
-                    <button class="btn btn-danger" onclick="location.href='login.html'">Đăng nhập</button>
+                    <a class="btn btn-danger" href="../login-form/index.html">Đăng nhập</a>
                 </div>
                 <div class="item">
-                    <button class="btn btn-danger" onclick="location.href='register.html'">Đăng ký</button>
+                    <a class="btn btn-danger" href="../registration-form/Registration.html">Đăng ký</a>
                 </div>
 
             </div>
@@ -94,7 +103,7 @@
                     </div>
                     <p>Homestay Novotel tự hào là một trong những thương hiệu lưu trú hàng đầu trên toàn cầu, mang đến cho khách hàng trải nghiệm lưu trú đẳng cấp và dịch vụ tuyệt vời. 
                       Với mạng lưới homestay rộng khắp và vị trí tuyệt vời trên khắp thế giới, chúng tôi cam kết đem đến cho bạn một kỳ nghỉ đáng nhớ và không thể nào quên.</p>
-                      <button type="button" class="btn btn-danger">ABOUT US</button>
+                      <a href="../About-us/aboutus.html" class="btn btn-danger">ABOUT US</a>
                 </div>
                 <div class="right">
                     <img src="../homepage/assets/about_us.png" alt="" style="width: 75%">

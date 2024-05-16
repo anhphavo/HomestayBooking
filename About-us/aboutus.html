@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        h2 {
+            color: #333;
+            background-color: #ff0000; /* Màu đỏ */
+            padding: 10px; /* Khoảng cách giữa nền và chữ */
+            border-radius: 5px; /* Bo tròn góc */
+            margin-top: 0; /* Loại bỏ khoảng trống trên đầu tiêu đề */
+        }
+        p {
+            line-height: 1.6;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            float: right; /* Đặt ảnh bên phải */
+            margin-left: 20px; /* Khoảng cách giữa ảnh và văn bản */
+        }
+        /* Thêm phần CSS mới */
+        .services {
+            text-align: center; /* Căn giữa nội dung */
+            margin-top: 50px; /* Khoảng cách từ phần trước */
+            padding: 20px;
+            background-color: #f2f2f2; /* Màu nền xám nhạt */
+            border-radius: 5px;
+        }
+        .box-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .box {
+            flex-basis: calc(33.333% - 20px); /* Căn chỉnh kích thước của các box */
+            background-color: rgba(255, 255, 255, 0.2); /* Màu nền trắng đục */
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        .box:hover {
+            background-color: rgba(255, 255, 255, 0.3); /* Màu nền trắng đục khi di chuột qua */
+            transform: translateY(-5px); /* Dịch chuyển lên trên khi di chuột qua */
+        }
+        .box i {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        .heading {
+            color: #ff0000; /* Màu đỏ */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>About Us</h2>
+        <section id="history">
+            <h3>History</h3>
+            <p>Homestay là loại hình du lịch mà khách du lịch sẽ nghỉ, ngủ tại nhà người dân địa phương, nơi mà họ đặt chân đến nhằm giúp du khách khám phá, trải nghiệm và tìm hiểu phong tục tập quán, đời sống văn hóa của từng vùng miền tại địa phương đó.</p>
+            <img src="c:\Users\ADMIN\Downloads\homestay.jpg" alt="Homestay History">
+        </section>
+        <section id="mission">
+            <h3>Mission</h3>
+           
+            <p>Sứ mệnh của chúng tôi là muốn tạo nên một không gian nghỉ dưỡng gần gũi thiên nhiên, thân thiện với môi trường .
+            Nơi mọi người được trải nghiệm cuộc sống ngoại ô bình yên, với phong phú đủ loại cây trồng, trong những căn nhà ấm cúng, tiện nghi. 
+            Nơi các bạn sẽ cảm thấy như chính là ngôi nhà thứ 2 của mình.</p>
+        </section>
+        <section id="facilities">
+            <h3>Facilities</h3>
+            <img src="c:\Users\ADMIN\Downloads\b3.jpg" alt="Homestay Facilities">
+            <ul>
+                <li>Phòng ngủ đầy đủ tiện nghi</li>
+                <li>Bể bơi ngoài trời</li>
+                <li>Wi-Fi miễn phí</li>
+                <li>Giáp biển</li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Dịch vụ -->
+    <section class="services" id="services">
+        <h1 class="heading">
+            <span>Dịch</span>
+            <span>vụ & Tiện ích</span>
+        </h1>
+        <div class="box-container">
+            <div class="box">
+                <i class="fas fa-hotel"></i> 
+                <h3>Khách sạn giá rẻ</h3>
+            </div>
+            <div class="box">
+                <i class="fas fa-utensils"></i>
+                <h3>Ăn uống</h3>
+            </div>
+            <div class="box">
+                <i class="fas fa-bullhorn"></i>
+                <h3>Hướng dẫn an toàn</h3>
+            </div>
+            <div class="box">
+                <i class="fas fa-globe-asia"></i>
+                <h3>Trên thế giới</h3>
+            </div>
+            <div class="box">
+                <i class="fas fa-plane"></i>
+                <h3>Chuyến đi nhanh nhất</h3>
+            </div>
+            <div class="box">
+                <i class="fas fa-hiking"></i>
+                <h3>Phiêu lưu</h3>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,13 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 body {
-  background-image: url("http://www.edenluxurytravel.co.uk/Eden%20Collection%20Images/Country%20and%20Map%20%20Images/Maldives/Maldives%20Hero%20Image.tif?RenditionID=23");
-  background-size: cover; }
+    background-image: url('background.png');
+    background-size: cover;
+    background-position: center;
+    font-family:poppins;
+}
 
 .special-card {
-  /* create a custom class so you 
-       do not run into specificity issues 
-       against bootstraps styles
-       which tends to work better than using !important 
-       (future you will thank you later)*/
   background-color: whitesmoke;
   opacity: .6;
   box-shadow: 0 0 20px #ccc; }

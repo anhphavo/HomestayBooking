@@ -431,3 +431,17 @@ h1{
     margin-top: 29px;
     color: #fff;
 }
+
+#menu {
+    list-style: none;
+    display: flex;
+}
+
+#menu .item {
+    margin: 0px 25px;
+}
+
+#menu .item a {
+    color: #626a67;
+    text-decoration: none;
+}

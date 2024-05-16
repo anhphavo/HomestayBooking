@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:b|Roboto:400i&effect=shadow-multiple" rel="stylesheet">
@@ -16,18 +16,18 @@
          <div class="row">
              <div class="col-lg-6">
                  <div class="special-card card" style="height:30rem;">
-                     <h1 id="text">Hotel Reservations</h1>
+                     <h1 id="text">Đặt Phòng</h1>
                         <form name="hotelForm" method="POST" action="">
-                            <label for="firstname">Name</label><br>
-                            <input class="form-control form-control-sm" name="firstname" type="text" placeholder="Your name here...">
-                            <label for="lastname"> Lastname</label><br>
-                            <input class="form-control form-control-sm" name="lastname"  type="text" placeholder="Your surname here...">
-                            <p>Select your Hotel by clicking the dropdown menu below.</p>
+                            <label for="firstname">Họ</label><br>
+                            <input class="form-control form-control-sm" name="firstname" type="text" placeholder="Họ của bạn...">
+                            <label for="lastname"> Tên</label><br>
+                            <input class="form-control form-control-sm" name="lastname"  type="text" placeholder="Tên của bạn...">
+                            <p>Chọn Homestay bên dưới bằng cách click.</p>
                             <div class="row">
                                 <div class="hotelselect col-lg-4">
                                     <div class="dropdown">
                                         <button class="btn btn-secondary dropdown-toggle" value="displayHotelAndDayRate" name="hotels" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Select Hotel
+                                        Chọn Homestay
                                         </button>
                                         <div class="dropdown-menu" name="hotels" aria-labelledby="dropdownMenuButton">
                                             <a class="dropdown-item" href="#"  onclick="displayHotelAndDayRate(0)">Maldives</a>
@@ -41,9 +41,9 @@
                                 </div>
                             </div>
                             
-                            <label for="days"> Duration of stay </label>
+                            <label for="days"> Số ngày </label>
                             <input class="form-control form-control-sm" name="days" type="number">
-                            <button type="button" id="submit" onclick="displaySelectionAndPrice(); validateForm();" class="btn btn-secondary">Submit</button>
+                            <button type="button" id="submit" onclick="displaySelectionAndPrice(); validateForm();" class="btn btn-secondary">Thực hiện</button>
                             
                         </form>
                 </div>
@@ -51,7 +51,7 @@
              
             <div class="col">
                 <div class="special-card card bottom-card" style="width:33rem; height:15rem;">
-                    <h3>Booking Details</h3>
+                    <h3>Chi Tiết Đặt Phòng</h3>
                     <p id="test"></p>
                 </div>
             </div>
