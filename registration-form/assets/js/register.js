@@ -9,7 +9,7 @@ const accountNameMaxLength = 30;
 const passwordMinLength = 10;
 const passwordMaxLength = 50;
 const areaCodeLength = 2;
-const phoneNumberLength = 9;
+const phoneNumberLength = 10;
 const form = document.getElementById('frm-register');
 
 let firstNameRegex = /^[a-zA-Z]+$/;
@@ -304,7 +304,7 @@ function setPhoneNumberInvalid(message) {
 }
 
 function setPhoneNumberValid() {
-  signUpForm.phoneNumber.value = document.getElementById('phoneNumber').value;
+  signUpForm.phoneNumber.value = document.getElementById('inputNumber').value;
   signUpForm.phoneNumber.valid = true;
   phoneNumberErrorElement.style.display = "none";
 }
@@ -316,9 +316,9 @@ function validatePhoneNumber() {
     setPhoneNumberInvalid(
       `phoneNumber must be ${phoneNumberLength} characters`
     );
-    return;
+  } else {
+    setPhoneNumberValid();
   }
-  setPhoneNumberValid();
 }
 /////////////////////////// email /////////////////////////////////////////////
 function setEmailInvalid(message) {
@@ -343,27 +343,31 @@ function validateEmail() {
   }
   setEmailValid();
 }
-function saveToLocalStorage() {
-  let user_records = JSON.parse(localStorage.getItem("user_records")) || [];
-  user_records.push({
-    firstName: signUpForm.firstName.value,
-    lastName: signUpForm.lastName.value,
-    account: signUpForm.accountName.value,
-    password: signUpForm.password.value,
-    confirmPassword: signUpForm.confirmPassword.value,
-    email: signUpForm.email.value,
-    areaCode: signUpForm.areaCode.value,
-    phoneNumber: signUpForm.phoneNumber.value,
-  });
-
-  localStorage.setItem('user_records', JSON.stringify(user_records));
-};
 
 function register() {
-  alert("Your Account Was Created Successfully!");
+  console.log(signUpForm)
+  fetch('https://misonomika.site/api/auth/register/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      firstName: signUpForm.firstName.value,
+      lastName: signUpForm.lastName.value,
+      username: signUpForm.accountName.value,
+      password: signUpForm.password.value,
+      phone: signUpForm.phoneNumber.value,
+      email: signUpForm.email.value
+    })
+  }).then(() => {
+    alert("Your Account Was Created Successfully!");
+    location.href = '/homepage/index.html'
+  })
 };
 
-function onSubmit() {
+form.addEventListener('submit', (e) => {
+  e.preventDefault()
+
   if (
     signUpForm.firstName.valid &&
     signUpForm.lastName.valid &&
@@ -375,12 +379,12 @@ function onSubmit() {
     signUpForm.phoneNumber.valid
   ) {
     register();
-    saveToLocalStorage();
     console.log("succeed");
     return true;
   } else {
     console.log("failed");
     return false;
   }
-};
+})
+
 initForm();
