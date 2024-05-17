@@ -101,4 +101,13 @@ function filterDestinations() {
     displayDestinations(searchResults);
 }
 
-displayDestinations(destinations);
+fetch('https://misonomika.site/api/rooms/?limit=40')
+.then(res => res.json()).then(res => {
+    displayDestinations(
+        res.map(
+            data => ({
+                ...data, amenities: data.amenities.map(v => v.name)
+            })
+        )
+    );
+})
