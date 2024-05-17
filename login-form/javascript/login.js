@@ -117,15 +117,26 @@ function validateForm() {
   loginButton.disabled = true;
 }
 
-function login() {
-  var username = usernameElemnent.value;
-  var password = passwordElemnent.value;
-  if ((username === "admin123") && (password === "Admin@1234")) {
+const form = document.getElementById('form')
+form.addEventListener('submit', e => {
+	e.preventDefault()
+
+	fetch('https://misonomika.site/api/auth/login/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      username: usernameElemnent.value,
+      password: passwordElement.value
+    })
+  }).then(() => {
     alert("Successfully!");
-    return;
-  }
-  alert("Username or Password was wrong! Please try again.");
-}
+		location.href = '/homepage/index.html'
+  }).catch(() => {
+		alert("Username or Password was wrong! Please try again.");
+	})
+})
 
 // Call initForm method immediately when page is loaded to is it some data for the form
 initForm();
