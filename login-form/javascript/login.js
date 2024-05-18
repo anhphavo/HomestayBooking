@@ -130,12 +130,14 @@ form.addEventListener('submit', e => {
       username: usernameElemnent.value,
       password: passwordElement.value
     })
-  }).then(() => {
-    alert("Successfully!");
-		location.href = '/homepage/index.html'
-  }).catch(() => {
-		alert("Username or Password was wrong! Please try again.");
-	})
+  }).then(res => {
+    if (res.status === 401) {
+      alert("Username or Password was wrong! Please try again.");
+    } else {
+      alert("Successfully!");
+      location.href = '/homepage/index.html'
+    }
+  })
 })
 
 // Call initForm method immediately when page is loaded to is it some data for the form
