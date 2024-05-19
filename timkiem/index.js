@@ -5,7 +5,6 @@ const homestay = [
     { name: "Homestay 4", location: "Location C", giá: "$70/đêm" }
 ];
 
-// Lắng nghe sự kiện input của ô tìm kiếm
 document.getElementById('searchInput').addEventListener('input', function() {
     searchHomestay();
 });
