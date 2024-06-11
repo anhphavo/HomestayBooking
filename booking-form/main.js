@@ -1,4 +1,4 @@
-var hotels = ["Maldives", "Bali", "Thailand"];
+var hotels = ["Da Nang", "Sai Gon", "Ha Noi"];
 var dayRates = [1000, 900, 800];
 var i = 0;
 
